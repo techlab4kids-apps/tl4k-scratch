@@ -1,6 +1,57 @@
 var GUI =
 (window["webpackJsonpGUI"] = window["webpackJsonpGUI"] || []).push([["gui"],{
 
+/***/ "./node_modules/@ionic/pwa-elements/dist/esm-es5 lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$":
+/*!*****************************************************************************************************************************************************!*\
+  !*** ./node_modules/@ionic/pwa-elements/dist/esm-es5 lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
+  \*****************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./pwa-action-sheet.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm-es5/pwa-action-sheet.entry.js",
+		"lib.min"
+	],
+	"./pwa-camera-modal-instance.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm-es5/pwa-camera-modal-instance.entry.js",
+		"lib.min"
+	],
+	"./pwa-camera-modal.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm-es5/pwa-camera-modal.entry.js",
+		"lib.min"
+	],
+	"./pwa-camera.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm-es5/pwa-camera.entry.js",
+		"lib.min"
+	],
+	"./pwa-toast.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm-es5/pwa-toast.entry.js",
+		"lib.min"
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(function() {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./node_modules/@ionic/pwa-elements/dist/esm-es5 lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$";
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/index.js?!./node_modules/postcss-loader/src/index.js?!./src/playground/index.css":
 /*!*****************************************************************************************************************!*\
   !*** ./node_modules/css-loader??ref--5-1!./node_modules/postcss-loader/src??postcss!./src/playground/index.css ***!
@@ -79,6 +130,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_supported_browser__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../lib/supported-browser */ "./src/lib/supported-browser.js");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./index.css */ "./src/playground/index.css");
 /* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _ionic_pwa_elements_loader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ionic/pwa-elements/loader */ "./node_modules/@ionic/pwa-elements/loader/index.mjs");
 // Polyfills
 
 
@@ -91,7 +143,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Register "base" page view
+
+ //
+// ReactDOM.render(<App />, document.getElementById('root'));
+//
+// Register "base" page view
 
 _lib_analytics__WEBPACK_IMPORTED_MODULE_6__["default"].pageview('/');
 var appTarget = document.createElement('div');
@@ -101,7 +157,10 @@ document.body.appendChild(appTarget);
 if (Object(_lib_supported_browser__WEBPACK_IMPORTED_MODULE_9__["default"])()) {
   // require needed here to avoid importing unsupported browser-crashing code
   // at the top level
-  __webpack_require__(/*! ./render-gui.jsx */ "./src/playground/render-gui.jsx").default(appTarget);
+  __webpack_require__(/*! ./render-gui.jsx */ "./src/playground/render-gui.jsx").default(appTarget); // // Call the element loader after the app has been rendered the first time
+
+
+  Object(_ionic_pwa_elements_loader__WEBPACK_IMPORTED_MODULE_11__["defineCustomElements"])(window);
 } else {
   _components_browser_modal_browser_modal_jsx__WEBPACK_IMPORTED_MODULE_8__["default"].setAppElement(appTarget);
   var WrappedBrowserModalComponent = Object(_lib_app_state_hoc_jsx__WEBPACK_IMPORTED_MODULE_7__["default"])(_components_browser_modal_browser_modal_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], true
